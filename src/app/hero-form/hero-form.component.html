@@ -1,0 +1,49 @@
+    <div class="container">
+      <div >
+        <form >
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control"
+                  
+                   [(ngModel)]="model.email" name="email"
+                   >     
+          </div>
+
+          <div class="form-group">
+            <label for="name">Username</label>
+            <input type="text" class="form-control" id="username"
+                   [(ngModel)]="model.username" name="username"
+                   >
+            
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password"
+                   [(ngModel)]="model.password" name="password"
+                   >
+                
+          </div>
+
+          <div class="form-group">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" class="form-control" id="phone_number"
+                   [(ngModel)]="model.phone_number" name="phone_number"
+                   #phone_number="ngModel">
+          </div>          
+        
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select class="form-control" id="country"
+                    required
+                    [(ngModel)]="model.country" name="country">
+              <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+            </select>
+          </div>
+     
+          
+        </form>
+        <app-resultcomponent [result] ='model'></app-resultcomponent>
+      </div>
+    </div>
+    
